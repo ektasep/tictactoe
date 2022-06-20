@@ -42,18 +42,26 @@ function App() {
   };
   return (
     <div className="app">
-      <h1>TIC TAC TOE</h1>
+      <h1>
+        TIC <span className="text-green"> TAC </span>TOE
+      </h1>
       <Statusmsg winner={winner} current={current} />
       <Board
         board={current.board}
         handleSquareClick={handleSquareClick}
         winningSquares={winningSquares}
       />
-      <button type="button" onClick={onnewgame}>
+      <button
+        type="button"
+        onClick={onnewgame}
+        className={` btn-reset ${winner ? 'active' : ' '}`}
+      >
         {' '}
         start a new game
       </button>
+      <h2 style={{ fontWeight: 'normal' }}>current game history</h2>
       <History history={history} moveTo={moveTo} currentMove={currentMove} />
+      <div className="bg-balls"></div>
     </div>
   );
 }
