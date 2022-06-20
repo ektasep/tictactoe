@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Statusmsg = ({ winner, current }) => {
+function Statusmsg({ winner, current }) {
   const noMovesLeft = current.board.every(el => el !== null);
 
   return (
@@ -12,6 +12,6 @@ const Statusmsg = ({ winner, current }) => {
       {!winner && noMovesLeft && 'X and O tied'}
     </h2>
   );
-};
+}
 
 export default Statusmsg;
